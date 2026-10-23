@@ -1,0 +1,17 @@
+#include <iostream>
+
+long long gcd(long long a, long long b) {
+  if (b == 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+
+long long lcm(long long a, long long b) { return a * b / gcd(a, b); }
+
+int main() {
+  long long a = 0;
+  long long b = 0;
+  std::cin >> a >> b;
+  std::cout << lcm(a, b) << std::endl;
+}
